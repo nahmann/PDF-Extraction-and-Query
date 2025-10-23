@@ -1,0 +1,334 @@
+{
+  "scenario": "M&A Due Diligence - Acquiring DeepShield Systems Inc.",
+  "description": "Pre-acquisition document review. Buyer needs to understand company structure, financials, IP, contracts, and risks before making an offer.",
+  "queries": [
+    {
+      "id": 1,
+      "category": "Corporate Structure",
+      "query": "What is the current corporate structure and ownership?",
+      "priority": "critical",
+      "expected_docs": ["certificate-of-incorporation", "stockholder-agreements", "cap-table"],
+      "why_important": "Understand who owns what before acquisition"
+    },
+    {
+      "id": 2,
+      "category": "Corporate Structure",
+      "query": "Who are the current board members and their roles?",
+      "priority": "high",
+      "expected_docs": ["board-meeting-minutes", "board-resolutions"],
+      "why_important": "Key decision makers, potential retention targets"
+    },
+    {
+      "id": 3,
+      "category": "Funding History",
+      "query": "What are the terms of the Series A, B, and C funding rounds?",
+      "priority": "critical",
+      "expected_docs": ["series-*-financing", "preferred-stock-agreements"],
+      "why_important": "Understand liquidation preferences, anti-dilution rights, affects purchase price"
+    },
+    {
+      "id": 4,
+      "category": "Funding History",
+      "query": "What liquidation preferences do preferred stockholders have?",
+      "priority": "critical",
+      "expected_docs": ["preferred-stock-purchase-agreement", "certificate-of-incorporation"],
+      "why_important": "Determines how acquisition proceeds are distributed"
+    },
+    {
+      "id": 5,
+      "category": "Funding History",
+      "query": "How much total capital has been raised?",
+      "priority": "high",
+      "expected_docs": ["financing-documents", "cap-table"],
+      "why_important": "Understand dilution and investor expectations"
+    },
+    {
+      "id": 6,
+      "category": "Equity & Compensation",
+      "query": "What is the employee stock option vesting schedule?",
+      "priority": "high",
+      "expected_docs": ["equity-incentive-plan", "stock-option-agreements"],
+      "why_important": "Post-acquisition retention, unvested options become liabilities"
+    },
+    {
+      "id": 7,
+      "category": "Equity & Compensation",
+      "query": "How many stock options are outstanding and unvested?",
+      "priority": "high",
+      "expected_docs": ["option-grant-records", "equity-summary"],
+      "why_important": "Understand option pool dilution effect on purchase price"
+    },
+    {
+      "id": 8,
+      "category": "Equity & Compensation",
+      "query": "Are there any acceleration clauses for stock options?",
+      "priority": "critical",
+      "expected_docs": ["equity-incentive-plan", "executive-employment-agreements"],
+      "why_important": "Single vs double trigger acceleration affects post-acquisition costs"
+    },
+    {
+      "id": 9,
+      "category": "Key Employees",
+      "query": "What are the employment terms for executives?",
+      "priority": "high",
+      "expected_docs": ["executive-employment-agreements", "offer-letters"],
+      "why_important": "Retention packages, change of control provisions"
+    },
+    {
+      "id": 10,
+      "category": "Key Employees",
+      "query": "Are there any change of control provisions in employment agreements?",
+      "priority": "critical",
+      "expected_docs": ["employment-agreements", "severance-agreements"],
+      "why_important": "Golden parachutes can be expensive post-acquisition"
+    },
+    {
+      "id": 11,
+      "category": "Intellectual Property",
+      "query": "What patents does the company own?",
+      "priority": "critical",
+      "expected_docs": ["patent-applications", "patent-grants", "ip-portfolio"],
+      "why_important": "Core asset valuation, freedom to operate"
+    },
+    {
+      "id": 12,
+      "category": "Intellectual Property",
+      "query": "Are there any IP assignment agreements with employees?",
+      "priority": "critical",
+      "expected_docs": ["employee-ip-agreements", "cipa-agreements"],
+      "why_important": "Ensure company owns all developed IP"
+    },
+    {
+      "id": 13,
+      "category": "Intellectual Property",
+      "query": "What proprietary technology or algorithms does the company have?",
+      "priority": "high",
+      "expected_docs": ["technology-documentation", "trade-secrets"],
+      "why_important": "Core competitive advantage, acquisition justification"
+    },
+    {
+      "id": 14,
+      "category": "Customer Contracts",
+      "query": "What are the terms of major customer contracts?",
+      "priority": "critical",
+      "expected_docs": ["customer-agreements", "msa", "statements-of-work"],
+      "why_important": "Revenue sustainability, change of control clauses"
+    },
+    {
+      "id": 15,
+      "category": "Customer Contracts",
+      "query": "Do customer contracts have change of control provisions?",
+      "priority": "critical",
+      "expected_docs": ["customer-contracts", "master-service-agreements"],
+      "why_important": "Customers might have right to terminate on acquisition"
+    },
+    {
+      "id": 16,
+      "category": "Customer Contracts",
+      "query": "What is the revenue concentration by customer?",
+      "priority": "high",
+      "expected_docs": ["revenue-reports", "customer-contracts"],
+      "why_important": "Risk assessment - reliance on single customers"
+    },
+    {
+      "id": 17,
+      "category": "Liabilities & Legal",
+      "query": "Are there any pending or threatened lawsuits?",
+      "priority": "critical",
+      "expected_docs": ["litigation-summary", "legal-proceedings"],
+      "why_important": "Hidden liabilities that affect valuation"
+    },
+    {
+      "id": 18,
+      "category": "Liabilities & Legal",
+      "query": "What insurance policies does the company have?",
+      "priority": "high",
+      "expected_docs": ["insurance-policies", "d-o-insurance"],
+      "why_important": "Coverage for liabilities, D&O protection"
+    },
+    {
+      "id": 19,
+      "category": "Liabilities & Legal",
+      "query": "Are there any indemnification obligations?",
+      "priority": "high",
+      "expected_docs": ["customer-contracts", "supplier-agreements"],
+      "why_important": "Potential future liabilities"
+    },
+    {
+      "id": 20,
+      "category": "Financial Performance",
+      "query": "What is the current revenue run rate?",
+      "priority": "critical",
+      "expected_docs": ["financial-statements", "revenue-reports"],
+      "why_important": "Valuation basis"
+    },
+    {
+      "id": 21,
+      "category": "Financial Performance",
+      "query": "What are the company's operating expenses?",
+      "priority": "high",
+      "expected_docs": ["financial-statements", "budget-reports"],
+      "why_important": "Profitability analysis, cost synergies"
+    },
+    {
+      "id": 22,
+      "category": "Financial Performance",
+      "query": "Is the company profitable or what is the burn rate?",
+      "priority": "critical",
+      "expected_docs": ["financial-statements", "cash-flow-projections"],
+      "why_important": "Determines if acquisition needs immediate funding"
+    },
+    {
+      "id": 23,
+      "category": "Debt & Obligations",
+      "query": "What outstanding debts or loans does the company have?",
+      "priority": "critical",
+      "expected_docs": ["loan-agreements", "credit-facilities"],
+      "why_important": "Affects net purchase price, may have change of control provisions"
+    },
+    {
+      "id": 24,
+      "category": "Debt & Obligations",
+      "query": "Are there any lease obligations?",
+      "priority": "high",
+      "expected_docs": ["lease-agreements", "real-estate-contracts"],
+      "why_important": "Long-term commitments, potential exit costs"
+    },
+    {
+      "id": 25,
+      "category": "Regulatory & Compliance",
+      "query": "What regulatory approvals or certifications does the company have?",
+      "priority": "critical",
+      "expected_docs": ["regulatory-filings", "certifications"],
+      "why_important": "Business continuity, industry requirements"
+    },
+    {
+      "id": 26,
+      "category": "Regulatory & Compliance",
+      "query": "Are there any pending regulatory investigations?",
+      "priority": "critical",
+      "expected_docs": ["regulatory-correspondence", "compliance-reports"],
+      "why_important": "Risk assessment, potential fines"
+    },
+    {
+      "id": 27,
+      "category": "Regulatory & Compliance",
+      "query": "What is the company's compliance with export control regulations?",
+      "priority": "high",
+      "expected_docs": ["export-control-policies", "itar-compliance"],
+      "why_important": "Critical for defense/security technology companies"
+    },
+    {
+      "id": 28,
+      "category": "Data & Security",
+      "query": "What is the company's cybersecurity posture?",
+      "priority": "high",
+      "expected_docs": ["security-policies", "incident-response-plans"],
+      "why_important": "Risk assessment, integration planning"
+    },
+    {
+      "id": 29,
+      "category": "Data & Security",
+      "query": "Has the company had any security breaches?",
+      "priority": "critical",
+      "expected_docs": ["incident-reports", "breach-notifications"],
+      "why_important": "Hidden liabilities, reputation risk"
+    },
+    {
+      "id": 30,
+      "category": "Data & Security",
+      "query": "What data privacy policies are in place?",
+      "priority": "high",
+      "expected_docs": ["privacy-policies", "gdpr-compliance"],
+      "why_important": "Regulatory compliance, customer trust"
+    },
+    {
+      "id": 31,
+      "category": "HR & Culture",
+      "query": "What is the employee headcount by department?",
+      "priority": "medium",
+      "expected_docs": ["org-charts", "headcount-reports"],
+      "why_important": "Integration planning, redundancy analysis"
+    },
+    {
+      "id": 32,
+      "category": "HR & Culture",
+      "query": "What employee benefits are provided?",
+      "priority": "medium",
+      "expected_docs": ["employee-handbook", "benefits-summary"],
+      "why_important": "Post-acquisition harmonization costs"
+    },
+    {
+      "id": 33,
+      "category": "HR & Culture",
+      "query": "Are there any union agreements or collective bargaining?",
+      "priority": "high",
+      "expected_docs": ["labor-agreements", "union-contracts"],
+      "why_important": "Restructuring constraints, labor relations"
+    },
+    {
+      "id": 34,
+      "category": "Governance",
+      "query": "What are the board's reserved matters and approval thresholds?",
+      "priority": "high",
+      "expected_docs": ["bylaws", "board-resolutions", "governance-policies"],
+      "why_important": "Understand decision-making process, integration constraints"
+    },
+    {
+      "id": 35,
+      "category": "Governance",
+      "query": "Are there any drag-along or tag-along rights?",
+      "priority": "critical",
+      "expected_docs": ["stockholder-agreements", "voting-agreements"],
+      "why_important": "Affects ability to complete acquisition"
+    },
+    {
+      "id": 36,
+      "category": "Related Party Transactions",
+      "query": "Are there any related party transactions?",
+      "priority": "high",
+      "expected_docs": ["related-party-disclosures", "board-approvals"],
+      "why_important": "Potential conflicts of interest, may need to unwind"
+    },
+    {
+      "id": 37,
+      "category": "Technology Stack",
+      "query": "What third-party software licenses does the company use?",
+      "priority": "medium",
+      "expected_docs": ["software-licenses", "vendor-agreements"],
+      "why_important": "Integration compatibility, license transfer rights"
+    },
+    {
+      "id": 38,
+      "category": "Technology Stack",
+      "query": "Does the company have any open source software obligations?",
+      "priority": "high",
+      "expected_docs": ["open-source-compliance", "license-inventory"],
+      "why_important": "Compliance risks, IP contamination"
+    },
+    {
+      "id": 39,
+      "category": "Competitive Position",
+      "query": "Who are the main competitors?",
+      "priority": "medium",
+      "expected_docs": ["market-analysis", "competitive-intelligence"],
+      "why_important": "Strategic fit, market positioning"
+    },
+    {
+      "id": 40,
+      "category": "Growth & Strategy",
+      "query": "What is the company's product roadmap?",
+      "priority": "high",
+      "expected_docs": ["product-roadmap", "strategic-plans"],
+      "why_important": "Alignment with acquirer's strategy, R&D commitments"
+    }
+  ],
+  "evaluation_rubric": {
+    "0": "No relevant results - completely wrong",
+    "1": "Partially relevant - mentions topic but missing key details",
+    "2": "Relevant but incomplete - need multiple chunks or additional context",
+    "3": "Good answer - contains most key information",
+    "4": "Excellent answer - complete, self-contained, immediately actionable"
+  },
+  "instructions": "For each query, test the search API and rate the top-3 results. Document which specific information is missing or well-captured."
+}
